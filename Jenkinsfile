@@ -1,21 +1,4 @@
-pipeline { 
-    agent {
-        label 'ws'
-    }
-    stages {
-        stage('Lint Checks') {
-            steps {
-                sh "echo Installing Lint Checker"
-                sh "npm i jslint"
-                sh "node_modules/jslint/bin/jslint.js server.js || true" 
-            }
-        }
+@Library('shared-library') _
 
-        stage('Static Code Analysis') {
-            steps {
-                sh "echo Static Checks ...."
-            }
-        }
-
-    }
-}
+// call is the function that will be called by default. So, we are delcaring the entire pipeline in the vars/nodejs.groovy
+nodejs()
