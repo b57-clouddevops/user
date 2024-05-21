@@ -4,7 +4,7 @@ ENV                 = "dev"
 # PRIVATE_SUBNET_CIDR = ["10.0.0.128/26" , "10.0.0.192/26"]
 
 SPOT_INSTANCE_COUNT = 1
-SPOT_INSTANCE_TYPE  = "t3.medium"
+SPOT_INSTANCE_TYPE  = "t3.large"
 
 OD_INSTANCE_COUNT   = 0
 OD_INSTANCE_TYPE    = "t3.micro"
