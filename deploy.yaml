@@ -23,6 +23,18 @@ spec:
         image: 355449129696.dkr.ecr.us-east-1.amazonaws.com/user:401
         ports:              # port where your container listens
         - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
         resources:
           requests:
             memory: "64Mi"
